@@ -19,7 +19,9 @@ public class Main {
             dim = 29;
         int c = 0;
 
-        System.out.println("Sun   Mon   Tue   Wed   Thu   Fri   Sat");
+        System.out.println(" ");
+        System.out.println("Sun  Mon  Tue  Wed  Thu  Fri  Sat");
+        System.out.println(" ");
         while(day >= 0) {
             System.out.print("     ");
             day--;
@@ -56,9 +58,9 @@ public class Main {
 
         wy = (3 + year + (year/4) - (year/100) + (year/400))%7;
         m = (month + 9)%12;
-        wm = (int) (2.6 * m +.5)%7;
+        wm = (int) (2.6*m+.5)%7;
         wd = (day - 1);
-        w = (wy +wm +wd)%7;
+        w = (wy+wm+wd)%7;
         return w;
     }
 
@@ -66,12 +68,12 @@ public class Main {
     public static int dayInMonth(int month, int year) {
 
         int day = 0;
-        switch (month) {
+        switch(month) {
             case 1: day = 31;
                 break;
             case 2: day = 28;
                 if (year %4 == 0 && year % 100 != 0 || year %400 == 0)
-                    day=29;
+                    day = 29;
                 break;
             case 3: day = 31;
                 break;
@@ -93,7 +95,6 @@ public class Main {
                 break;
             case 12: day = 30;
                 break;
-
         }
         return day;
     }
