@@ -20,7 +20,7 @@ public class Main {
         int c = 0;
 
         System.out.println(" ");
-        System.out.println("Sun  Mon  Tue  Wed  Thu  Fri  Sat");
+        System.out.println("Mon  Tue  Wed  Thu  Fri  Sat  Sun");
         System.out.println(" ");
         while(day >= 0) {
             System.out.print("     ");
@@ -99,4 +99,3 @@ public class Main {
         return day;
     }
 }
-
