@@ -4,12 +4,15 @@ import java.util.Scanner;
 
 public class Main {
 
+    static Scanner console = new Scanner(System.in);
+
     public static void main(String[] args) {
-      Scanner console = new Scanner(System.in);
       int month, day = 0, year;
 
-        System.out.print( " | Enter the month and year (separated by space) | ");
-        month = console.nextInt();
+        System.out.print( " | Enter the month | ");
+
+        month = inputMonth();
+        System.out.print("  \n| Enter the year  | ");
         year = console.nextInt();
 
         boolean ly = isLeapYear(year);
@@ -19,9 +22,7 @@ public class Main {
             dim = 29;
         int c = 0;
 
-        System.out.println(" ");
-        System.out.println("Mon  Tue  Wed  Thu  Fri  Sat  Sun");
-        System.out.println(" ");
+        System.out.println(" \nMon  Tue  Wed  Thu  Fri  Sat  Sun\n ");
         while(day >= 0) {
             System.out.print("     ");
             day--;
@@ -35,6 +36,30 @@ public class Main {
             c++;
             if (c % 7 == 0)
                 System.out.println();
+        }
+    }
+    public static int inputMonth() {
+        int month = console.nextInt();
+        while (true) {
+            switch (month) {
+                case 1:
+                case 2:
+                case 3:
+                case 4:
+                case 5:
+                case 6:
+                case 7:
+                case 8:
+                case 9:
+                case 10:
+                case 11:
+                case 12: return month;
+                default:
+                    System.out.print(" \nThere is not such a month in the year\nTry again -->");
+                    month = console.nextInt();
+                    break;
+
+            }
         }
     }
 
