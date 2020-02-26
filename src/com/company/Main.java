@@ -10,9 +10,9 @@ public class Main {
       int month, day = 0, year;
 
         System.out.print( " | Enter the month | ");
-
         month = inputMonth();
-        System.out.print("  \n| Enter the year  | ");
+
+        System.out.print("\n | Enter the year  | ");
         year = console.nextInt();
 
         boolean ly = isLeapYear(year);
@@ -55,7 +55,7 @@ public class Main {
                 case 11:
                 case 12: return month;
                 default:
-                    System.out.print(" \nThere is not such a month in the year\nTry again -->");
+                    System.out.print(" \n | There is not such a month in the year |\n | TRY AGAIN |  -->");
                     month = console.nextInt();
                     break;
 
