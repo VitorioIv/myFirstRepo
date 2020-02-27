@@ -38,6 +38,8 @@ public class Main {
                 System.out.println();
         }
     }
+
+
     public static int inputMonth() {
         int month = console.nextInt();
         while (true) {
@@ -88,7 +90,6 @@ public class Main {
         w = (wy+wm+wd)%7;
         return w;
     }
-
 
     public static int dayInMonth(int month, int year) {
 
