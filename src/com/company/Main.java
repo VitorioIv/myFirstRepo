@@ -15,13 +15,16 @@ public class Main {
         System.out.print("\n | Enter the year  | ");
         year = console.nextInt();
 
+        // метод
         boolean ly = isLeapYear(year);
         int dim = dayInMonth(month, year);
-        day = dow(month, day, year);
+        day = dow(month, day, year); // day of the week
         if (ly == true&&month == 2)
-            dim = 29;
+            dim = 29; // if the month is a leap year, if it is the day of the week is 20 and day of the month are 29 days
         int c = 0;
 
+        // Показване на форматирания календар за искания месец и година.
+        // Използва се dow и dim методи
         System.out.println(" \nMon  Tue  Wed  Thu  Fri  Sat  Sun\n ");
         while(day >= 0) {
             System.out.print("     ");
@@ -39,7 +42,8 @@ public class Main {
         }
     }
 
-
+    // Този метод проверява дали зададения месец е грешен.
+    // Ако е се изписва това в System.out.print
     public static int inputMonth() {
         int month = console.nextInt();
         while (true) {
@@ -65,7 +69,9 @@ public class Main {
         }
     }
 
-
+    // Проверява дали годината е високосна
+    // input: the year
+    // output: true or false
     public static boolean isLeapYear(int year) {
         if (year%4 ==0 && year%100 !=0 || year%400 ==0)
             return true;
@@ -73,7 +79,11 @@ public class Main {
             return false;
     }
 
-
+    // Функция: dow
+    // Показва деня на седмицата, на който се пада даден ден
+    // input: month,day & year
+    // output: 0 = Monday, 1 = Tuesday...
+    // wy,day,month,w
     public static int dow(int month, int day, int year) {
         int wy;
         int wd;
@@ -83,6 +93,7 @@ public class Main {
         if ( month < 3 )
             year = year-1;
 
+        // изчисления за week of the year, month, week of the month, day of the week, week
         wy = (3 + year + (year/4) - (year/100) + (year/400))%7;
         m = (month + 9)%12;
         wm = (int) (2.6*m+.5)%7;
@@ -91,6 +102,9 @@ public class Main {
         return w;
     }
 
+    // връща броя на дните в определен месец
+    // input: month, year
+    // output: броя на дните в месеца
     public static int dayInMonth(int month, int year) {
 
         int day = 0;
